@@ -1,0 +1,23 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1507947935131.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "23FAEA6F",
+    "lastKnownWriteTime" : 1507966295,
+    "last_content_update" : 1507966295373,
+    "path" : "C:/Github/readsvm/src/read_svm.cpp",
+    "project_path" : "src/read_svm.cpp",
+    "properties" : {
+        "cursorPosition" : "47,3",
+        "scrollLine" : "27",
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 7,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "cpp"
+}

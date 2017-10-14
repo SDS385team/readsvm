@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "\n\nCXX11STD = -std=c++11\nCXXFLAGS= -stdlib=libc++\nPKG_CPPFLAGS = -I../inst/include\nPKG_CXXFLAGS = $(SHLIB_OPENMP_CXXFLAGS) \nPKG_LIBS =  $(SHLIB_OPENMP_CFLAGS) $(LAPACK_LIBS) $(BLAS_LIBS) $(FLIBS)\n\n",
+    "created" : 1507925563196.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1845128455",
+    "id" : "30DC65EE",
+    "lastKnownWriteTime" : 1507944415,
+    "last_content_update" : 1507944415457,
+    "path" : "C:/Github/readsvm/src/Makevars",
+    "project_path" : "src/Makevars",
+    "properties" : {
+    },
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "makefile"
+}

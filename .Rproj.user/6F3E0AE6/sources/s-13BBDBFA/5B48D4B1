@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1507925570204.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "5B48D4B1",
+    "lastKnownWriteTime" : 1507944913,
+    "last_content_update" : 1507944913407,
+    "path" : "C:/Github/readsvm/src/Makevars.win",
+    "project_path" : "src/Makevars.win",
+    "properties" : {
+        "cursorPosition" : "5,39",
+        "scrollLine" : "0"
+    },
+    "relative_order" : 4,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "makefile"
+}

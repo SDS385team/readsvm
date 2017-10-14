@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1507965103640.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "AE56D766",
+    "lastKnownWriteTime" : 1507965770,
+    "last_content_update" : 1507965770,
+    "path" : "C:/Github/readsvm/man/read_sparse_svm.Rd",
+    "project_path" : "man/read_sparse_svm.Rd",
+    "properties" : {
+        "cursorPosition" : "0,0",
+        "scrollLine" : "0"
+    },
+    "relative_order" : 10,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_doc"
+}

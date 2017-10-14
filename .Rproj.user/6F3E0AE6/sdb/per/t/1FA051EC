@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "// [[Rcpp::depends(BH)]]\n// [[Rcpp::depends(RcppArmadillo)]]\n\n#include <RcppArmadillo.h>\n#include <fstream>\n#include <sstream>\n#include <string>\n#include <boost/regex.hpp>\n\nusing namespace std;  \nusing namespace Rcpp;\nusing namespace arma;\nusing namespace boost;\n\n\n// This is a simple example of exporting a C++ function to R. You can\n// source this function into an R session using the Rcpp::sourceCpp \n// function (or via the Source button on the editor toolbar). Learn\n// more about Rcpp at:\n//\n//   http://www.rcpp.org/\n//   http://adv-r.had.co.nz/Rcpp.html\n//   http://gallery.rcpp.org/\n//\n\n// [[Rcpp::export]] \nint read_sparse_svm(std::string path) {\n  std::ifstream read(path.c_str());\n  std::string contents;\n  int y;\n  read >> y;\n  return y;\n}\n\n",
+    "created" : 1507944454890.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1778984118",
+    "id" : "1FA051EC",
+    "lastKnownWriteTime" : 1507944377,
+    "last_content_update" : 1507944377,
+    "path" : "C:/Github/readsvm/src/read_svm.cpp",
+    "project_path" : "src/read_svm.cpp",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 7,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "cpp"
+}

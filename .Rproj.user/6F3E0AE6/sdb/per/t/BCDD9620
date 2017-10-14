@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "Package: readsvm\nType: Package\nTitle: What the package does (short line)\nVersion: 1.0\nDate: 2017-10-13\nAuthor: Who wrote it\nMaintainer: Who to complain to <yourfault@somewhere.net>\nDescription: More about what it does (maybe more than one line)\nLicense: What license is it under?\nImports: Rcpp (>= 0.12.12)\nLinkingTo: Rcpp, RcppArmadillo, BH\nRoxygenNote: 6.0.1\n",
+    "created" : 1507925547989.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "230659938",
+    "id" : "BCDD9620",
+    "lastKnownWriteTime" : 1507944274,
+    "last_content_update" : 1507944274337,
+    "path" : "C:/Github/readsvm/DESCRIPTION",
+    "project_path" : "DESCRIPTION",
+    "properties" : {
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "dcf"
+}

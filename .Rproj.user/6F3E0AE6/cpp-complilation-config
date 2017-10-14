@@ -1,0 +1,17 @@
+{
+    "args" : [
+        "-IC:/Program Files/RStudio/resources/libclang/builtin-headers/3.4",
+        "-IC:/Users/mbg877/Documents/R/win-library/3.4/Rcpp/include",
+        "-IC:/Users/mbg877/Documents/R/win-library/3.4/RcppArmadillo/include",
+        "-IC:/Users/mbg877/Documents/R/win-library/3.4/BH/include",
+        "-std=gnu++11",
+        "-IC:/R/R-3.4.1/include",
+        "-DNDEBUG",
+        "-DARMA_64BIT_WORD=1",
+        "-IC:/swarm/workspace/External-R-3.4.1/vendor/extsoft/include",
+        "-fopenmp"
+    ],
+    "hash" : "150796558015079448341507944913",
+    "is_cpp" : true,
+    "pch" : "Rcpp"
+}
