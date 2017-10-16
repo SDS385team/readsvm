@@ -11,7 +11,7 @@
         "-IC:/swarm/workspace/External-R-3.4.1/vendor/extsoft/include",
         "-fopenmp"
     ],
-    "hash" : "150796558015079448341507944913",
+    "hash" : "150817666915079448341507944913",
     "is_cpp" : true,
     "pch" : "Rcpp"
 }

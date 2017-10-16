@@ -5,13 +5,13 @@
                 "column" : 6,
                 "file" : "C:/Github/readsvm/src/read_svm.cpp",
                 "kind" : 6,
-                "line" : 27,
-                "name" : "read_sparse_svm(int, int, bool)",
+                "line" : 33,
+                "name" : "read_svm(const std::string, const bool, const bool, const bool, const std::size_t)",
                 "parent_name" : "",
-                "usr" : "c:@F@read_sparse_svm#I#I#b#"
+                "usr" : "c:@F@read_svm#1$@N@std@C@basic_string>#C#$@N@std@S@char_traits>#C#$@N@std@C@allocator>#C#1b#1b#1b#1k#"
             }
         ],
         "file" : "C:/Github/readsvm/src/read_svm.cpp",
-        "file_last_write" : 1507966295
+        "file_last_write" : 1508183905
     }
 ]

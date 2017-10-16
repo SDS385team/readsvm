@@ -6,22 +6,24 @@
 
 using namespace Rcpp;
 
-// read_sparse_svm
-List read_sparse_svm(std::string path, int min_col_index, bool return_tranpose);
-RcppExport SEXP _readsvm_read_sparse_svm(SEXP pathSEXP, SEXP min_col_indexSEXP, SEXP return_tranposeSEXP) {
+// read_svm
+List read_svm(const std::string path, const bool zero_indexing, const bool zero_one_response, const bool transpose, const std::size_t nfeatures);
+RcppExport SEXP _readsvm_read_svm(SEXP pathSEXP, SEXP zero_indexingSEXP, SEXP zero_one_responseSEXP, SEXP transposeSEXP, SEXP nfeaturesSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< std::string >::type path(pathSEXP);
-    Rcpp::traits::input_parameter< int >::type min_col_index(min_col_indexSEXP);
-    Rcpp::traits::input_parameter< bool >::type return_tranpose(return_tranposeSEXP);
-    rcpp_result_gen = Rcpp::wrap(read_sparse_svm(path, min_col_index, return_tranpose));
+    Rcpp::traits::input_parameter< const std::string >::type path(pathSEXP);
+    Rcpp::traits::input_parameter< const bool >::type zero_indexing(zero_indexingSEXP);
+    Rcpp::traits::input_parameter< const bool >::type zero_one_response(zero_one_responseSEXP);
+    Rcpp::traits::input_parameter< const bool >::type transpose(transposeSEXP);
+    Rcpp::traits::input_parameter< const std::size_t >::type nfeatures(nfeaturesSEXP);
+    rcpp_result_gen = Rcpp::wrap(read_svm(path, zero_indexing, zero_one_response, transpose, nfeatures));
     return rcpp_result_gen;
 END_RCPP
 }
 
 static const R_CallMethodDef CallEntries[] = {
-    {"_readsvm_read_sparse_svm", (DL_FUNC) &_readsvm_read_sparse_svm, 3},
+    {"_readsvm_read_svm", (DL_FUNC) &_readsvm_read_svm, 5},
     {NULL, NULL, 0}
 };
 
