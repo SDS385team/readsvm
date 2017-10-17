@@ -7,12 +7,12 @@
 using namespace Rcpp;
 
 // read_svm
-List read_svm(const std::string path, const bool zero_indexing, const bool zero_one_response, const bool transpose, const std::size_t nfeatures);
+List read_svm(std::string path, const bool zero_indexing, const bool zero_one_response, const bool transpose, const std::size_t nfeatures);
 RcppExport SEXP _readsvm_read_svm(SEXP pathSEXP, SEXP zero_indexingSEXP, SEXP zero_one_responseSEXP, SEXP transposeSEXP, SEXP nfeaturesSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< const std::string >::type path(pathSEXP);
+    Rcpp::traits::input_parameter< std::string >::type path(pathSEXP);
     Rcpp::traits::input_parameter< const bool >::type zero_indexing(zero_indexingSEXP);
     Rcpp::traits::input_parameter< const bool >::type zero_one_response(zero_one_responseSEXP);
     Rcpp::traits::input_parameter< const bool >::type transpose(transposeSEXP);

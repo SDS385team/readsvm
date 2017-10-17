@@ -19,11 +19,11 @@ using namespace arma;
 
 //' @title Read SVM Light sparse data
 //' @description Convenience function to read svm light data format
-//' @param path : Path of file saved in .svm format
-//' @param zero_indexing : integer indicating if stored data indicated columns indexing starting from 0 or 1
-//' @param zero_one_response : teh default output for the response variable is 1, -1; set to true to change to 1, 0.
-//' @param transpose : logical indicating if feature matrix should be returned transposed (see details).
-//' @param nfeatures : optional non negative integer indicating the total number of features in the matrix, if the value is zero (by default)
+//' @param path address of file saved in \code{.svm} format
+//' @param zero_indexing integer indicating if stored data indicated columns indexing starting from 0 or 1
+//' @param zero_one_response the default output for the response variable is 1, -1; set to true to change to 1, 0.
+//' @param transpose logical indicating if feature matrix should be returned transposed (see details).
+//' @param nfeatures optional non negative integer indicating the total number of features in the matrix, if the value is zero (by default)
 //' the number of features is taken from the observed data. Use when the number of features is known and you want to run data in batches.
 //' @return an object of class dgCMatrix from the Matrix package
 //' @details Most sparse matrix libraries have better support for column-compressed sparse data format while algorithms 
@@ -40,6 +40,7 @@ List read_svm(std::string path,
   std::vector<uword> row, col;
   std::vector<int> response;
   std::vector<double> raw_values;
+  int y;
   
   // Make conection to file
   std::ifstream read(path.c_str()); 
@@ -48,15 +49,26 @@ List read_svm(std::string path,
   // Initializer counters for rows and columns
   int row_counter = 0, col_counter;
 
-  // Should response be in 1,0 format?
-  const uword base_col = zero_one_response ? 1 : 0;
+  // Are columns zero-indexed? Should response be 0,1?
+  const uword base_col = zero_indexing ? 1 : 0;
   
   try {
     while (getline(read, tmp_string)) {
+      // Split line with spaces or colon
       std::vector<std::string> tmp_words;
       boost::split(tmp_words, tmp_string, boost::is_any_of(" :"), boost::token_compress_on);
+      
+      // Iterator over splitted line
       auto it = tmp_words.begin();
-      response.push_back(stoi(*it++));
+      
+      // Save value of response
+      y = stoi(*it++);
+      if (zero_one_response) {
+        y = (y == 1) ? 1 : 0;
+      }
+      response.push_back(y);
+      
+      // Store splitted values on locations and values
       while (it != tmp_words.end()) {
         col_counter = stod(*it++) - base_col;
         col.push_back(col_counter); 
@@ -72,20 +84,20 @@ List read_svm(std::string path,
    
   // Create ingredients of sparse matrix
   arma::umat location(2, row.size());
-  // arma::vec values(&raw_values[0], raw_values.size(), false, true); // copy from memory
-  arma::mat values(raw_values);
+  arma::vec values(&raw_values[0], raw_values.size(), false, true); // copy from memory
+  // arma::mat values(raw_values);
   
   // How many columns are there ?
-  col_counter = (nfeatures > 0) ? nfeatures : col.back();
+  col_counter = (nfeatures > 0) ? nfeatures : col.back() + 1;
   
   // Define field of sparse matrix depending on transposed or not
-  int nrow, ncol;// [[Rcpp::export]]
+  int nrow, ncol;// 
   bool sort;
   if (transpose) {
     location.row(1) = conv_to<urowvec>::from(row);
     location.row(0) = conv_to<urowvec>::from(col);
-    nrow = row_counter;
-    ncol = col_counter;
+    nrow = col_counter;
+    ncol = row_counter;
     sort = false;
   } else {
     location.row(0) = conv_to<urowvec>::from(row);
@@ -96,7 +108,7 @@ List read_svm(std::string path,
   }
   
   // Buld sparse matrix
-  sp_mat features(location, values, sort);
+  sp_mat features(location, values, nrow, ncol, sort);
   
   // Output
   return List::create(Named("response") = response,

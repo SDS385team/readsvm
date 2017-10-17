@@ -8,15 +8,15 @@ read_svm(path, zero_indexing = TRUE, zero_one_response = FALSE,
   transpose = TRUE, nfeatures = 0L)
 }
 \arguments{
-\item{path}{: Path of file saved in .svm format}
+\item{path}{address of file saved in \code{.svm} format}
 
-\item{zero_indexing}{: integer indicating if stored data indicated columns indexing starting from 0 or 1}
+\item{zero_indexing}{integer indicating if stored data indicated columns indexing starting from 0 or 1}
 
-\item{zero_one_response}{: teh default output for the response variable is 1, -1; set to true to change to 1, 0.}
+\item{zero_one_response}{the default output for the response variable is 1, -1; set to true to change to 1, 0.}
 
-\item{transpose}{: logical indicating if feature matrix should be returned transposed (see details).}
+\item{transpose}{logical indicating if feature matrix should be returned transposed (see details).}
 
-\item{nfeatures}{: optional non negative integer indicating the total number of features in the matrix, if the value is zero (by default)
+\item{nfeatures}{optional non negative integer indicating the total number of features in the matrix, if the value is zero (by default)
 the number of features is taken from the observed data. Use when the number of features is known and you want to run data in batches.}
 }
 \value{

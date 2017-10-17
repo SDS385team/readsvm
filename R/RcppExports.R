@@ -3,11 +3,11 @@
 
 #' @title Read SVM Light sparse data
 #' @description Convenience function to read svm light data format
-#' @param path : Path of file saved in .svm format
-#' @param zero_indexing : integer indicating if stored data indicated columns indexing starting from 0 or 1
-#' @param zero_one_response : teh default output for the response variable is 1, -1; set to true to change to 1, 0.
-#' @param transpose : logical indicating if feature matrix should be returned transposed (see details).
-#' @param nfeatures : optional non negative integer indicating the total number of features in the matrix, if the value is zero (by default)
+#' @param path address of file saved in \code{.svm} format
+#' @param zero_indexing integer indicating if stored data indicated columns indexing starting from 0 or 1
+#' @param zero_one_response the default output for the response variable is 1, -1; set to true to change to 1, 0.
+#' @param transpose logical indicating if feature matrix should be returned transposed (see details).
+#' @param nfeatures optional non negative integer indicating the total number of features in the matrix, if the value is zero (by default)
 #' the number of features is taken from the observed data. Use when the number of features is known and you want to run data in batches.
 #' @return an object of class dgCMatrix from the Matrix package
 #' @details Most sparse matrix libraries have better support for column-compressed sparse data format while algorithms 
